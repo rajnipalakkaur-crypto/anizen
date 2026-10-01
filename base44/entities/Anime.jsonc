@@ -1,0 +1,116 @@
+{
+  "name": "Anime",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "alt_title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "poster_url": {
+      "type": "string"
+    },
+    "banner_url": {
+      "type": "string"
+    },
+    "genres": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "studio": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "TV",
+        "Movie",
+        "OVA",
+        "ONA",
+        "Special"
+      ],
+      "default": "TV"
+    },
+    "release_year": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Ongoing",
+        "Completed",
+        "Upcoming"
+      ],
+      "default": "Ongoing"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "total_episodes": {
+      "type": "number"
+    },
+    "has_sub": {
+      "type": "boolean",
+      "default": true
+    },
+    "has_dub": {
+      "type": "boolean",
+      "default": false
+    },
+    "airing_day": {
+      "type": "string",
+      "enum": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "views": {
+      "type": "number",
+      "default": 0
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "published": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "title",
+    "slug"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

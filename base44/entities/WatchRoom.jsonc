@@ -1,0 +1,78 @@
+{
+  "name": "WatchRoom",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "6-character party code friends type in to join"
+    },
+    "host_id": {
+      "type": "string"
+    },
+    "host_name": {
+      "type": "string"
+    },
+    "anime_id": {
+      "type": "string"
+    },
+    "anime_title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "episode_id": {
+      "type": "string"
+    },
+    "episode_number": {
+      "type": "number"
+    },
+    "episode_title": {
+      "type": "string"
+    },
+    "thumbnail_url": {
+      "type": "string"
+    },
+    "server_name": {
+      "type": "string"
+    },
+    "is_playing": {
+      "type": "boolean",
+      "default": false
+    },
+    "position": {
+      "type": "number",
+      "default": 0
+    },
+    "position_updated": {
+      "type": "number",
+      "description": "Epoch ms when position was last reported"
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "ended": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "code",
+    "host_id",
+    "slug",
+    "episode_number"
+  ],
+  "rls": {
+    "read": {},
+    "create": {},
+    "update": {},
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

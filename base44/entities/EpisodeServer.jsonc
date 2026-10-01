@@ -1,0 +1,67 @@
+{
+  "name": "EpisodeServer",
+  "type": "object",
+  "properties": {
+    "episode_id": {
+      "type": "string"
+    },
+    "server_name": {
+      "type": "string"
+    },
+    "video_url": {
+      "type": "string"
+    },
+    "quality": {
+      "type": "string",
+      "enum": [
+        "360p",
+        "480p",
+        "720p",
+        "1080p",
+        "4K"
+      ],
+      "default": "1080p"
+    },
+    "language": {
+      "type": "string",
+      "default": "Japanese"
+    },
+    "subtitle_url": {
+      "type": "string"
+    },
+    "subtitle_label": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "priority": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "required": [
+    "episode_id",
+    "server_name",
+    "video_url"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
